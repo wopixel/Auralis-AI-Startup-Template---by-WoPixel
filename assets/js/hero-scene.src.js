@@ -130,11 +130,10 @@ if (canvas && !prefersReducedMotion) {
     const horizontalRadius = cloudRadius * object.scale.x * 0.82;
     const rightEdge = visibleHalfWidth - horizontalRadius - 0.08;
     const rightBias = width >= 1200 ? 1.65 : width >= 760 ? 1.2 : 1.05;
-    object.position.x = width < 760 ? 1.05 : Math.max(0, Math.min(rightBias, rightEdge));
+    object.position.x = width < 760 ? 0 : Math.max(0, Math.min(rightBias, rightEdge));
     if (copy && width < 760) {
-      const copyStart = copy.offsetTop;
-      const verticalRadius = cloudRadius * object.scale.x * 0.62;
-      object.position.y = Math.max(0, visibleHalfHeight - verticalRadius - (copyStart * (visibleHalfHeight * 2) / height));
+      // Mobile uses a centered, shallow scene layer behind the copy and actions.
+      object.position.y = 0;
     } else if (copy && width >= 760) {
       const copyCenter = copy.offsetTop + copy.offsetHeight / 2;
       object.position.y = (height / 2 - copyCenter) * ((visibleHalfHeight * 2) / height);
