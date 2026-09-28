@@ -561,7 +561,7 @@ html[data-theme='dark'] .hero-satellite{background:color-mix(in srgb,var(--surfa
   .hero-scene{left:50%;right:auto;top:118px;bottom:auto;width:126%;height:360px;opacity:.3;transform:translateX(-50%)}
   .hero-orbit--one{right:-52%;top:286px;width:390px;height:390px}
   .hero-orbit--two{right:-22%;top:360px;width:270px;height:270px}
-  .hero-satellite{display:block;left:50%;right:auto;top:316px;bottom:auto;width:220px!important;padding:17px 17px 15px!important;transform:translateX(-50%) scale(.74);transform-origin:center top}
+  .hero-satellite{display:block;left:calc(50% + 18px);right:auto;top:270px;bottom:auto;width:220px!important;padding:17px 17px 15px!important;transform:translateX(-50%) scale(.74);transform-origin:center top}
   .hero-satellite.signal--wide{padding:18px 17px 16px!important}
   .hero-satellite.signal--tall{padding:19px 17px 17px!important}
 
@@ -687,7 +687,7 @@ html[data-theme='dark'] .hero-satellite{background:color-mix(in srgb,var(--surfa
   .hero--home{min-height:650px}
   .hero-copy h1{font-size:clamp(45px,14vw,61px)}
   .hero-copy h1 em{font-size:22px}
-  .hero-satellite{top:296px;transform:translateX(-50%) scale(.68)}
+  .hero-satellite{left:calc(50% + 14px);top:252px;transform:translateX(-50%) scale(.68)}
   .product-metrics{grid-template-columns:1fr;gap:14px}
   .metric{display:grid;grid-template-columns:1fr auto;align-items:center;column-gap:8px}
   .metric>span{grid-column:1/-1}
