@@ -1,7 +1,7 @@
 # Auralis AI Startup Template
 
 <p align="center">
-  <a href="https://wopixel.github.io/Auralis-AI-Startup-Template/" target="_blank">
+  <a href="https://wopixel.github.io/Auralis-AI-Startup-Template---by-WoPixel/" target="_blank">
     <img src="./auralis-template-preview.png" alt="Auralis AI Startup Template desktop and mobile preview" width="800">
   </a>
 </p>
