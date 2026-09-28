@@ -697,3 +697,7 @@ html[data-theme='dark'] .hero-satellite{background:color-mix(in srgb,var(--surfa
   .footer-grid{grid-template-columns:1fr}
   .footer-brand{grid-column:auto}
 }
+@media (max-width:780px){
+  .hero-satellite{z-index:3;pointer-events:none}
+  .hero-copy{z-index:4}
+}
