@@ -42,9 +42,13 @@
     if (event.key === 'Escape' && mobileNav?.classList.contains('is-open')) setMobileNav(false);
   });
 
-  const savedTheme = window.localStorage.getItem('auralis-theme');
   const requestedTheme = new URLSearchParams(window.location.search).get('theme');
-  root.dataset.theme = requestedTheme === 'light' || (requestedTheme !== 'dark' && savedTheme === 'light') ? 'light' : 'dark';
+  const themePreference = window.matchMedia('(prefers-color-scheme: dark)');
+  const savedTheme = window.localStorage.getItem('auralis-theme');
+  const validSavedTheme = savedTheme === 'light' || savedTheme === 'dark' ? savedTheme : null;
+  const validRequestedTheme = requestedTheme === 'light' || requestedTheme === 'dark' ? requestedTheme : null;
+  let usesSystemTheme = !validRequestedTheme && !validSavedTheme;
+  root.dataset.theme = validRequestedTheme || validSavedTheme || (themePreference.matches ? 'dark' : 'light');
 
   const syncSnapshotTheme = () => {
     document.querySelectorAll('.snapshot-frame img').forEach((image) => {
@@ -67,10 +71,18 @@
   syncThemeButton();
   syncSnapshotTheme();
 
+  themePreference.addEventListener?.('change', (event) => {
+    if (!usesSystemTheme) return;
+    root.dataset.theme = event.matches ? 'dark' : 'light';
+    syncThemeButton();
+    syncSnapshotTheme();
+  });
+
   document.addEventListener('click', (event) => {
     const themeButton = event.target.closest('[data-theme-toggle]');
     if (themeButton) {
       const light = root.dataset.theme === 'light';
+      usesSystemTheme = false;
       if (light) root.dataset.theme = 'dark';
       else root.dataset.theme = 'light';
       window.localStorage.setItem('auralis-theme', light ? 'dark' : 'light');
