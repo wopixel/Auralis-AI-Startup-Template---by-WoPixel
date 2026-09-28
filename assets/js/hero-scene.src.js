@@ -122,7 +122,8 @@ if (canvas && !prefersReducedMotion) {
     camera.aspect = width / height;
     camera.updateProjectionMatrix();
     renderer.setSize(width, height, false);
-    object.scale.setScalar(width < 560 ? 0.82 : width < 1000 ? 0.96 : 1.05);
+    // Give the mobile silhouette more presence while keeping it behind the hero copy.
+    object.scale.setScalar(width < 560 ? 1.08 : width < 1000 ? 1.02 : 1.05);
     const visibleHalfHeight = camera.position.z * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
     const visibleHalfWidth = visibleHalfHeight * camera.aspect;
     // Keep the cloud anchored to the right edge while accounting for its horizontal silhouette.
