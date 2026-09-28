@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://wopixel.github.io/Auralis-AI-Startup-Template---by-WoPixel/" target="_blank">
-    <img src="./auralis-template-preview.png" alt="Auralis AI Startup Template desktop and mobile preview" width="800">
+    <img src="./template.png" alt="Auralis AI Startup Template desktop and mobile preview" width="800">
   </a>
 </p>
 
